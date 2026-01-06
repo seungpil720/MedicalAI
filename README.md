@@ -1,6 +1,8 @@
- 📏 AI 기반 거리 측정 웹 애플리케이션 (AI Distance Estimator)
+ AI 기반 거리 측정 웹 애플리케이션 (AI Distance Estimator)
 
 이 프로젝트는 Python Flask와 YOLOv8 딥러닝 모델을 활용하여, 사진 속의 사람을 자동으로 인식하고 카메라와의 거리를 추정해주는 웹 플랫폼입니다. 구글 클라우드(Google Cloud Run) 환경에서 실행되도록 설계되었습니다.
+
+--- 
 
  📋 주요 기능 (Features)
 
@@ -14,6 +16,8 @@
      성인 평균 어깨 너비(약 50cm)를 기준값으로 사용하여 거리를 추정합니다.
 4.  시각화 (Visualization):
      인식된 대상에 바운딩 박스(Bounding Box)를 그리고, 계산된 거리(m)를 이미지 위에 표시합니다.
+
+--- 
 
  🛠 기술 스택 (Tech Stack)
 
@@ -32,7 +36,7 @@
 ├── yolov8n.pt              YOLO AI 모델 (최초 실행 시 자동 다운로드)
 └── images.jpeg            분석 테스트용 샘플 이미지 파일들
 
-
+--- 
 
  ⚙️ 거리 측정 원리 (Logic)
 
@@ -46,6 +50,8 @@ $$ Distance = \frac{\text{Known Width} \times \text{Focal Length}}{\text{Pixel W
 
 > 참고: 정확한 거리 측정을 위해서는 사용하는 카메라에 맞춰 `app.py` 내의 `FOCAL_LENGTH` 값을 보정(Calibration)해야 합니다.
 
+--- 
+
  🚀 설치 및 실행 방법 (Local)
 
 로컬 컴퓨터에서 테스트하려면 다음 단계를 따르세요.
@@ -55,20 +61,14 @@ $$ Distance = \frac{\text{Known Width} \times \text{Focal Length}}{\text{Pixel W
 git clone [GitHub 주소]
 
 
-
-
 2. 라이브러리 설치:
 
 pip install -r requirements.txt
 
 
-
-
 3. 앱 실행:
 
 python app.py
-
-
 
 
 4. 접속: 웹 브라우저를 열고 `http://localhost:8080` 으로 접속합니다.
